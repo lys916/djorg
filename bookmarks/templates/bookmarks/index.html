@@ -1,7 +1,19 @@
 <h1>Bookmarks</h1>
 
 {% if bookmarks %}
-we have bookmarks
+
+	Bookmarks:
+
+	{% for bookmark in bookmarks %}
+		<li>{{ bookmark.url }}</li>
+	{% endfor %}
+
+	Personal Bookmarks:
+	{% for personalbm in personalBookmarks %}
+		<li>{{ personalbm.url }}</li>
+	{% endfor %}
+
 {% else %}
 no bookmarks
+
 {% endif %}
