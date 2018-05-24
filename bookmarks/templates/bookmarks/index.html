@@ -8,12 +8,20 @@
 		<li>{{ bookmark.url }}</li>
 	{% endfor %}
 
+{% else %}
+no bookmarks
+
+{% endif %}
+
+
+{% if personalBookmarks %}
+
 	Personal Bookmarks:
 	{% for personalbm in personalBookmarks %}
 		<li>{{ personalbm.url }}</li>
 	{% endfor %}
 
 {% else %}
-no bookmarks
+no personal bookmarks
 
 {% endif %}

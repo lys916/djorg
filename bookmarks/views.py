@@ -8,9 +8,15 @@ def bookmarksIndex(request):
 	bookmarksArray = Bookmark.objects.all()
 	print(bookmarksArray[0].url)
 	context = {
-		'bookmarks': Bookmark.objects.all(),
-		'personalBookmarks': PersonalBookmark.objects.all()
+		'bookmarks': Bookmark.objects.all()
 	}
+
+	if request.user.is_anonymous:
+		context['personalBookmarks'] = PersonalBookmark.objects.none()
+	else:
+		context['personalBookmarks'] = PersonalBookmark.objects.filter(user=request.user)
+
+
 	return render(request, 'bookmarks/index.html', context)
 
 print('xx bookmarks views.py')
