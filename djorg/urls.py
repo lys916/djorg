@@ -20,5 +20,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('bookmarks/', include('bookmarks.urls')),
 ]
-
-print('xx djorg urls.py')

@@ -10,5 +10,3 @@ class Bookmark(models.Model):
 
 class PersonalBookmark(Bookmark):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-print('xx bookmarks model.py')
