@@ -34,6 +34,8 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
 INSTALLED_APPS = [
     'bookmarks',
+    'notes',
+    # 'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,7 +125,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#  Django REST framweork
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        # Use Django's standard django.contrib.auth permission,
+        # or allow read-only access for unauthenticated users 
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ]
+}
+
 import dj_database_url
 DATABASES = {}
 
-DATABASES['default'] = dj_database_url.config(default=config(DATABASE_URL))
+DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'))
