@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 from uuid import uuid4
 from django.db import models
+=======
+from django.db import models
+from uuid import uuid4
+>>>>>>> e9d67d6e7e2cef1c062d4dfbf185eff87a966128
 from django.contrib.auth.models import User
 
 # Create your models here.

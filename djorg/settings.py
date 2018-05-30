@@ -37,7 +37,11 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 INSTALLED_APPS = [
     'bookmarks',
     'notes',
+<<<<<<< HEAD
     'rest_framework',
+=======
+    # 'rest_framework',
+>>>>>>> e9d67d6e7e2cef1c062d4dfbf185eff87a966128
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
