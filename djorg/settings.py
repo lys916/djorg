@@ -13,8 +13,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 from decouple import config
 import dj_database_url
-import rest_framework
-print ('REST_FRAMEWORK VERSION', rest_framework.VERSION)
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -37,11 +35,8 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 INSTALLED_APPS = [
     'bookmarks',
     'notes',
-<<<<<<< HEAD
     'rest_framework',
-=======
-    # 'rest_framework',
->>>>>>> e9d67d6e7e2cef1c062d4dfbf185eff87a966128
+    'graphene_django',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -138,6 +133,11 @@ REST_FRAMEWORK = {
         # or allow read-only access for unauthenticated users 
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ]
+}
+
+# graphene
+GRAPHENE = {
+    'SCHEMA' : 'notes.schema.schema' # dir.filename.varname
 }
 
 import dj_database_url
